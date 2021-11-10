@@ -1,21 +1,25 @@
-const colors = require('tailwindcss/colors')
+const colors = require('tailwindcss/colors');
 
 module.exports = {
-  // mode: 'jit',
-  purge: [
-    'index.html',
-    '*.js*',
-  ],
+  mode: "jit",
+  purge: ["./index.html", "./src/**/*.jsx"],
+  darkMode: false, // or 'media' or 'class'
   theme: {
+    extend: {
+      animation: {
+        'spin-slow': 'spin 1.5s linear infinite',
+      }
+    },
     colors: {
-      // Build your palette here
       transparent: 'transparent',
       current: 'currentColor',
-      gray: colors.gray,
-      green: colors.green,
-      red: colors.red,
-      blue: colors.blue,
-      yellow: colors.yellow,
-    }
+      black: colors.black,
+      white: colors.white,
+      gray: colors.blueGray,
+    },
   },
-}
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+};
